@@ -1,0 +1,74 @@
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    box-sizing: border-box;
+    background: #111;
+}
+
+.container{
+    min-height: 100vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.wish {
+    height: 30rem;
+    width: 40rem;
+    margin: auto;
+    border: solid 5px white;
+    color: white;
+    font-size: 4rem;
+    font-family: 'Mr De Haviland', cursive;
+    position: relative;
+    text-align: center;
+}
+
+@media screen and (max-width: 400px) {
+    .wish {
+        font-size: 2rem;
+        height: 15rem;
+    }
+}
+
+.wish {
+    display: inline-block;
+    color:white;
+    background: #acacac -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#acacac));
+    background-position: -4rem top; /*50px*/
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation-name: shimmer;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-background-size: 5rem 100%; /*50px*/
+    
+  }
+  
+  @-webkit-keyframes shimmer {
+      0% {
+          background-position: -4rem top; /*50px*/
+      }
+      100% {
+          background-position: 40rem top; /*200px*/
+      }
+  }
+
+.balloon {
+    display:inline-block;
+    width:120px;
+    height:145px;
+    background: linear-gradien(#FFD700);
+    border-radius:80%;
+    position: absolute;
+    top: 50px;
+    left: 30rem;
+  }
