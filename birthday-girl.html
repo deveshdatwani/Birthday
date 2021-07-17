@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Throwback</title>
+    <title>❤️ Throwback</title>
     <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="js/confetti.js">
 </head>
 <body>
     <style>
@@ -20,7 +22,7 @@
             justify-content: center;
             min-width: 100vw;
             min-height: 100vh;
-            -webkit-filter: blur(5px);
+            -webkit-filter: blur(8px);
             padding: 0;
             margin: 0;
         }
@@ -32,7 +34,12 @@
             justify-content: center;
             color: white;
             font-family: 'Mr De Haviland', cursive;
-            font-size: 5rem;
+            font-size: 4rem;
+        }
+        @media screen and (max-width:400px) {
+            .ml3{
+                font-size: 20px;
+            }
         }
     </style>
     <div id="myVideo">
@@ -45,8 +52,29 @@
     </div>
     <div class="love">
         <div class="I">
-            <p>I Love You.....</p>
+            <p class="ml3" id="iloveyou">I Love You Bubu.....</p>
         </div>
     </div>
+    <script>
+        var text = ["I Love You Bubu....","Lubim Ta Moja Laska....","मैं तुझ से प्यार करता हूँ...."];
+        elem = document.getElementById("iloveyou");
+        var textWrapper = document.querySelector('.ml3');
+        textWrapper.innerHTML = text[1];    
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        anime.timeline({loop:true})
+        .add({
+            targets: '.ml3 .letter',
+            opacity: [0,1],
+            easing: "easeInOutQuad",
+            duration: 2250,
+            delay: (el, i) => 150 * (i+1)
+        }).add({
+            targets: '.ml3',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+        })
+    </script>
 </body>
 </html
